@@ -1,0 +1,80 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testcase.TestCaseFactory as TestCaseFactory
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
+import com.kms.katalon.core.testobject.ObjectRepository as ObjectRepository
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+
+import com.thoughtworks.selenium.Selenium
+import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.WebDriver
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium
+import static org.junit.Assert.*
+import java.util.regex.Pattern
+import static org.apache.commons.lang3.StringUtils.join
+
+WebUI.openBrowser('https://www.google.com/')
+def driver = DriverFactory.getWebDriver()
+String baseUrl = "https://www.google.com/"
+selenium = new WebDriverBackedSelenium(driver, baseUrl)
+selenium.open("https://sandbox.jurnal.id/invoices")
+selenium.click("//div[@id='main-content']/header/div/div[2]/div/div/button/i")
+selenium.click("link=Sales Invoice")
+selenium.click("//form[@id='main_form']/div[2]")
+selenium.click("//form[@id='main_form']/div[2]/div")
+selenium.click("link=Select contact")
+selenium.click("id=select2-result-label-0")
+selenium.click("id=person_display_name")
+selenium.click("id=person_display_name")
+selenium.type("id=person_display_name", "RIZKY DHINI 1234")
+selenium.click("id=person_email")
+selenium.type("id=person_email", "rizkyratnasari24@gmail.com")
+selenium.click("id=person_billing_address")
+selenium.type("id=person_billing_address", "jalan garuda indonesia")
+selenium.click("id=person_phone")
+selenium.type("id=person_phone", "087659686756756")
+selenium.click("id=aodc-add")
+selenium.click("//body[@id='modj']/div[19]/div/table/tbody/tr/td[4]")
+selenium.click("id=transaction_transaction_date")
+selenium.click("//body[@id='modj']/div[21]/div/table/tbody/tr/td[4]")
+selenium.click("//form[@id='main_form']/div[3]/div[2]/div/div/div/span")
+selenium.click("//body[@id='modj']/div[21]/div/table/tbody/tr/td[4]")
+selenium.click("id=select2-result-label-0")
+selenium.type("id=product_name", "salestesting123")
+selenium.click("id=product_product_code")
+selenium.type("id=product_product_code", "123456")
+selenium.click("//div[@id='s2id_product_product_category_ids']/ul")
+selenium.click("id=product_buy_price_per_unit")
+selenium.type("id=product_buy_price_per_unit", "Rp. 100.000,00")
+selenium.click("id=add-new-product")
+selenium.click("id=transaction_transaction_lines_attributes_0_rate")
+selenium.type("id=transaction_transaction_lines_attributes_0_rate", "Rp. 100.000,00")
+selenium.click("id=transaction_transaction_lines_attributes_0_discount")
+selenium.type("id=transaction_transaction_lines_attributes_0_discount", "10")
+selenium.click("id=transaction_message")
+selenium.click("id=transaction_message")
+selenium.click("id=transaction_message")
+selenium.type("id=transaction_message", "untuk tes qa")
+selenium.click("id=transaction_memo")
+selenium.click("id=transaction_memo")
+selenium.type("id=transaction_memo", "tes qa mekari")
+selenium.click("//div[@id='dropzoneAdd']/div/span")
+selenium.click("//div[@id='dropzoneAdd']/div")
+selenium.click("id=create_button")
+selenium.click("link=Receive Payment")
+selenium.click("name=button")
